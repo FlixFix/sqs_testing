@@ -93,10 +93,12 @@ Erweitere jede Teststrategie um sinnvolle weitere Testfälle:
 - **Unit-Test (Mockito):**
     - Teste Methoden wie `lendBook`, einschließlich fehlerhafter Übergaben
     - Simuliere verschiedene Rückgabewerte und überprüfe die Service-Reaktion
+    - Dokumentation: https://site.mockito.org/
 
 - **Integrationstest (Testcontainers):**
     - Teste auch Methoden wie `findByLentTrue`, `findById`, `save`
     - Verifiziere, dass das Mapping zwischen Entity und Business-Objekt korrekt funktioniert
+    - Dokumentation: https://testcontainers.com/
 
 - **Externer Datenbank-Test:**
     - Verifiziere das Verhalten der Anwendung bei Zugriff auf bekannte Daten
