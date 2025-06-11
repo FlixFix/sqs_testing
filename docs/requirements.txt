@@ -1,3 +1,4 @@
 sphinx
 sphinxcontrib-openapi
 sphinx_rtd_theme
+sphinx_copybutton
