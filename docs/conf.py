@@ -16,4 +16,4 @@ root_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = 'alabaster'
+html_theme = 'furo'
