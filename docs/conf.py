@@ -25,7 +25,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx_copybutton',
-    'myst_parser',
+    'sphinxcontrib.asciidoc',
 ]
 
 templates_path = ['_templates']

@@ -1,0 +1,7 @@
+= CoffeeHub Documentation
+Felix Rampf <your-email@example.com>
+:toc:
+
+Hello, world!
+
+This is an AsciiDoc page.
