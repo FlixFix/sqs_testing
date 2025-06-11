@@ -57,19 +57,38 @@ Das erzeugt eine ausführbare JAR-Datei im Verzeichnis `target/`.
 ### Unit-Test (Mockito-basiert)
 
 ```bash
-  mvn test -Dtest=MyTestClass
+mvn test -Dtest=MockitoLibraryTest
 ```
 
-- Führt einen spezifischen Test aus
-- Braucht ihr dann später für eure Pipeline, um in jedem Job nur einen Test ausführen zu lassen
+- Testet den Service isoliert
+- Verwendet gemockten Speicherport
+- Keine Datenbank notwendig
+
+### Integrationstest (mit Testcontainers)
+
+```bash
+mvn test -Dtest=TestContainersLibraryTest
+```
+
+- Verwendet eine MySQL-Datenbank in einem Docker-Container
+- Docker muss installiert sein
+
+### Test mit externer Datenbank (Docker Compose)
+
+```bash
+mvn test -Dtest=ManualLibraryTest
+```
+
+- Verbindet sich mit der manuell gestarteten MySQL-Datenbank
+- Erwartet eine laufende Datenbank auf `localhost:3306`
 
 ---
 
-## Aufgaben
+## Aufgaben für Studierende
 
-### 1. Testmethoden erstellen
+### 1. Testmethoden erweitern
 
-Erstellt für jede Teststrategie sinnvolle Testfälle:
+Erweitere jede Teststrategie um sinnvolle weitere Testfälle:
 
 - **Unit-Test (Mockito):**
     - Teste Methoden wie `lendBook`, einschließlich fehlerhafter Übergaben
@@ -82,7 +101,7 @@ Erstellt für jede Teststrategie sinnvolle Testfälle:
     - Dokumentation: https://testcontainers.com/
 
 - **Externer Datenbank-Test:**
-    - Verifiziere das Verhalten der Anwendung bei Zugriff auf eine tatsächlich laufende Datenbank bspw. in Docker
+    - Verifiziere das Verhalten der Anwendung bei Zugriff auf bekannte Daten
 
 ### 2. GitHub Actions CI-Pipeline erstellen
 
