@@ -9,4 +9,4 @@ build:
     - asciidoctor
 
 mkdocs:
-  configuration: mkdocs.yml
+  configuration: mkdocs.yaml
