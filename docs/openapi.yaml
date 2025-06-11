@@ -41,7 +41,7 @@ paths:
         "200":
           description: List of lent books returned successfully
           content:
-            '*/*':
+            application/json:
               schema:
                 type: array
                 items:
@@ -57,7 +57,7 @@ paths:
         "200":
           description: List of available books returned successfully
           content:
-            '*/*':
+            application/json:
               schema:
                 type: array
                 items:

@@ -3,6 +3,9 @@ package com.flixfix.sqs_testing.web;
 import com.flixfix.sqs_testing.service.BookDto;
 import com.flixfix.sqs_testing.service.LibraryService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -21,16 +24,31 @@ public class BookController {
         this.service = service;
     }
 
-    @Operation(summary = "Get available books", description = "Retrieves a list of all currently available books in the library.")
-    @ApiResponse(responseCode = "200", description = "List of available books returned successfully")
     @GetMapping("/available")
+    @Operation(summary = "Get available books", description = "Retrieves a list of all currently available books in the library.")
+    @ApiResponse(
+            responseCode = "200",
+            description = "List of available books returned successfully",
+            content = @Content(
+                    mediaType = "application/json",
+                    array = @ArraySchema(schema = @Schema(implementation = BookDto.class))
+            )
+    )
     public List<BookDto> available() {
         return service.getAvailableBooks();
     }
 
-    @Operation(summary = "Get lent books", description = "Retrieves a list of books that are currently lent out.")
-    @ApiResponse(responseCode = "200", description = "List of lent books returned successfully")
+
     @GetMapping("/lent")
+    @Operation(summary = "Get lent books", description = "Retrieves a list of books that are currently lent out.")
+    @ApiResponse(
+            responseCode = "200",
+            description = "List of lent books returned successfully",
+            content = @Content(
+                    mediaType = "application/json",
+                    array = @ArraySchema(schema = @Schema(implementation = BookDto.class))
+            )
+    )
     public List<BookDto> lent() {
         return service.getLentBooks();
     }
